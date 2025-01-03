@@ -22,42 +22,38 @@
 
         h2 {
             text-align: center;
-            margin-bottom: 20px;
-            font-size: 24px;
+            margin-bottom: 30px;
+            font-size: 24px; /* Default font size */
             color: #fff;
         }
 
         label {
             display: block;
-            margin-bottom: 8px;
-            font-size: 14px;
+            margin-bottom: 12px;
+            font-size: 16px; /* Default font size */
             color: #fff;
         }
 
         input {
-            width: 100%;
-            padding: 12px;
-            margin: 10px 0 20px;
+            width: 300px; /* Increased width */
+            padding: 10px;
+            margin: 10px 0;
             border: 1px solid #ccc;
-            border-radius: 5px;
-            background-color: #333;
-            font-size: 16px;
+            border-radius: 8px;
+            font-size: 16px; /* Default font size */
             color: #fff;
-        }
-
-        input:focus {
-            outline: none;
-            border-color: #76c7c0;
+            background-color: #333;
         }
 
         button {
-            width: 100%;
-            padding: 12px;
-            background-color: #007bff; /* Blue button */
+            width: 300px; /* Same width as input fields */
+            padding: 10px;
+            margin: 10px 0;
             border: none;
-            border-radius: 5px;
-            font-size: 16px;
+            border-radius: 8px;
+            font-size: 16px; /* Default font size */
             color: #fff;
+            background-color: #007bff; /* Blue button */
             cursor: pointer;
         }
 
@@ -67,27 +63,29 @@
 
         .error-message {
             color: #f44336;
-            font-size: 14px;
+            font-size: 14px; /* Default font size */
             text-align: center;
         }
 
-        /* Mobile-friendly */
-        @media (max-width: 600px) {
-            h2 {
-                font-size: 20px;
-            }
-
-            input, button {
-                font-size: 14px;
-            }
+        .form-group {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
-        /* Full screen login form */
-        .login-container {
-            width: 90%;
-            max-width: 400px;
-            padding: 30px;
-            box-sizing: border-box;
+        .form-group label {
+            margin-bottom: 10px;
+        }
+
+        .form-group input {
+            margin-bottom: 15px;
+            width: 100%;
+        }
+
+        .form-group button {
+            margin-top: 15px;
+            width: 100%;
         }
     </style>
 </head>
@@ -96,19 +94,21 @@
     <div class="login-container">
         <h2>Login</h2>
         <form id="loginForm">
-            <div>
+            <div class="form-group">
                 <label for="displayName">Your Display Name</label>
                 <input type="text" id="displayName" name="displayName" required>
             </div>
-            <div>
+            <div class="form-group">
                 <label for="playerId">Your Player ID</label>
                 <input type="text" id="playerId" name="playerId" required>
             </div>
-            <div>
+            <div class="form-group">
                 <label for="targetPlayerId">Target Player ID</label>
                 <input type="text" id="targetPlayerId" name="targetPlayerId" required>
             </div>
-            <button type="submit">Login</button>
+            <div class="form-group">
+                <button type="submit">Login</button>
+            </div>
             <div id="errorMessage" class="error-message"></div>
         </form>
     </div>
